@@ -1,0 +1,68 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.exa.community/getting-started/protocol.md, https://docs.exa.community/getting-started/contracts.md,
+  https://docs.exa.community/getting-started/audits.md
+notes: >-
+  EXA Market is an on-chain protocol, not an HTTP API, so the usual web-API
+  conformance families (OAuth2/OIDC/FAPI/SCIM/OData/JSON:API/RFC 9457) are not
+  applicable — there is no HTTP contract to conform to. The standards that do
+  apply are blockchain-native: the Algorand Standard Asset (ASA) token standard
+  and TEAL/AVM smart-contract execution. Third-party smart-contract security
+  audit is published.
+standards:
+- id: algorand-asa
+  name: Algorand Standard Assets (ASA)
+  conforms: true
+  evidence: >-
+    Protocol docs state EXA trades both NFTs and fungible tokens natively because
+    "Algorand assets share the same standard called ASA (Algorand Standard Assets)",
+    with no extra token layer. Payment assets are identified by ASA ID (USDC 31566704,
+    USDT 312769); the EXA governance token is ASA 1888888888.
+  source: https://docs.exa.community/getting-started/protocol.md
+- id: teal-avm-smart-contracts
+  name: TEAL / Algorand Virtual Machine smart contracts
+  conforms: true
+  evidence: >-
+    Listing, Offer and Auction contracts are published as base64 TEAL approval and
+    clear-state programs in the contracts reference; a contract is deployed per
+    listing / offer / auction.
+  source: https://docs.exa.community/getting-started/contracts.md
+- id: third-party-security-audit
+  name: Independent smart-contract security audit
+  conforms: true
+  evidence: >-
+    Runtime Verification audited the EXA Finance "baskets" smart contract in March
+    2022; the full report is published as a PDF in the Runtime Verification
+    publications repository. Additional soft audits were run on 2023-2024 contracts
+    with reviewers from the Algorand Foundation, Vestige and Lofty AI.
+  source: https://runtimeverification.com/blog/runtime-verification-audits-exa-finance-s-baskets-smart-contract
+  report: https://github.com/runtimeverification/publications/blob/main/reports/smart-contracts/EXA_Finance.pdf
+- id: dao-onchain-governance
+  name: On-chain token governance (EXRC / EXIP proposal lifecycle)
+  conforms: true
+  evidence: >-
+    Five-phase governance model (forum discussion, EXRC creation, EXRC feedback,
+    EXIP creation, EXIP voting with a >50% approval threshold), explicitly modeled
+    on Uniswap, dYdX, Tinyman and Blur governance.
+  source: https://docs.exa.community/getting-started/governance.md
+not_applicable:
+- id: oauth2
+  reason: No HTTP API; authorization is wallet-signed on-chain transactions.
+- id: oidc
+  reason: No HTTP API; identity is an Algorand account address.
+- id: rfc9457
+  reason: No HTTP API; errors surface as AVM transaction rejections.
+- id: json-api
+  reason: No HTTP API.
+- id: odata
+  reason: No HTTP API.
+- id: fapi
+  reason: Not a regulated open-banking provider.
+- id: psd2
+  reason: Not a payment services provider under PSD2.
+- id: scim
+  reason: No user directory / provisioning surface.
+- id: idempotency
+  reason: No HTTP API; transaction uniqueness is enforced by the Algorand ledger.
+- id: pagination
+  reason: No HTTP API.

@@ -1,0 +1,43 @@
+generated: '2026-07-20'
+method: searched
+source: live HTTP probes of EXA Market / EXA Community hosts
+notes: >-
+  EXA Market publishes no /.well-known/ discovery surface. Every RFC 9116 /
+  OIDC / RFC 8414 / api-catalog / ai-plugin path returned 404 on both the
+  marketplace and the documentation host. The documentation host does publish
+  an llms.txt (saved verbatim at llms/exa-finance-llms.txt). Absence of these
+  records is a real, verified result — not a gap in probing.
+hosts:
+- host: https://exa.market
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+- host: https://docs.exa.community
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/exa-finance-llms.txt
+  - path: /robots.txt
+    status: 200

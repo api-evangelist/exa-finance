@@ -1,20 +1,83 @@
 aid: exa-finance
 name: Exa Finance
-description: Exa Finance is a company surfaced as a portfolio company of speedinvest and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: 'EXA Finance is a French Web3 company, founded in 2021, that builds EXA
+  Market — a peer-to-peer NFT and multi-asset marketplace on the Algorand blockchain.
+  Because Algorand represents both fungible tokens and NFTs under the single ASA (Algorand
+  Standard Asset) standard, the EXA Market protocol lets users bundle up to four assets
+  into a "basket" and trade them in a single transaction, sell NFTs for any ASA rather
+  than only the native ALGO token, make peer-to-peer offers, and run standard sales,
+  normal and Dutch/reverse auctions, and multi-mints. Creators set an on-chain royalty
+  fee of up to 15% globally against their creator address, payable in ALGO, USDC,
+  USDT and other opted-in assets. The protocol is governed by the EXA token (ASA ID
+  1888888888) through the EXA Community DAO, whose EXRC/EXIP proposal lifecycle is
+  modeled on Uniswap, dYdX, Tinyman and Blur. EXA raised a $2M seed round in January
+  2022 with Speedinvest, Lemniscap, Big Brain Holdings, Borderless Capital, Encode
+  Club, Meld Ventures, 11-11 DG Partners and 0x Ventures. EXA Market publishes no
+  public HTTP/REST API: its programmable surface is on-chain Algorand smart contracts
+  (listing, offer and auction contracts, published as TEAL approval programs), reached
+  through standard Algorand algod and indexer node APIs and the Algorand SDKs.'
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://exa.market/icon-256x256.png
 url: https://raw.githubusercontent.com/api-evangelist/exa-finance/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - speedinvest
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: no-public-http-api-onchain-only
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Blockchain
+- Web3
+- NFT
+- Marketplace
+- Algorand
+- Smart Contracts
+- Decentralized Finance
+- Governance
+- Digital Assets
 apis: []
+common:
+- type: DomainSecurity
+  url: security/exa-finance-domain-security.yml
+- type: Website
+  url: https://exa.market/
+- type: Portal
+  url: https://exa.market/
+- type: Documentation
+  url: https://docs.exa.community/
+- type: GettingStarted
+  url: https://docs.exa.community/getting-started/introduction
+- type: GitHubOrganization
+  url: https://github.com/exa-finance
+- type: Twitter
+  url: https://twitter.com/EXA_Community
+- type: LLMsTxt
+  url: llms/exa-finance-llms.txt
+- type: WellKnown
+  url: well-known/exa-finance-well-known.yml
+- type: Conformance
+  url: conformance/exa-finance-conformance.yml
+- type: DataModel
+  url: data-model/exa-finance-data-model.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v1
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

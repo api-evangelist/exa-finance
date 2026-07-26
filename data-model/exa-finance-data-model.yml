@@ -1,0 +1,139 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.exa.community/getting-started/protocol.md, https://docs.exa.community/getting-started/contracts.md,
+  https://docs.exa.community/getting-started/utility.md
+notes: >-
+  Derived from the published EXA Market protocol reference rather than an OpenAPI
+  document — EXA ships no HTTP API, so the entity graph is the on-chain object
+  model (baskets, listings, offers, auctions, multi-mints) as documented. No
+  entity, field or relationship here is inferred beyond what the protocol docs
+  state.
+entities:
+- name: Asset
+  description: >-
+    Any Algorand Standard Asset (ASA) — NFT or fungible token. Algorand uses one
+    standard for both, so the protocol handles them uniformly.
+  identifier: asa_id
+  fields:
+  - name: asa_id
+    description: Algorand Standard Asset ID (the native on-chain asset identifier).
+  - name: creator_address
+    description: Algorand address that created the asset; carries the creator fee setting.
+- name: Basket
+  description: >-
+    The container in which assets are sold. A basket may hold up to 4 assets
+    (NFTs and/or fungible tokens, including ALGO); the limit may be raised by
+    governance.
+  fields:
+  - name: assets
+    description: Up to 4 ASAs bundled for a single trade.
+  relationships:
+  - type: has_many
+    target: Asset
+    via: assets
+- name: Listing
+  description: >-
+    A standard sale of a basket at a fixed price set by the seller. May be public
+    (to the market) or private (to a specific address), and may carry start and
+    end listing dates. A listing contract is deployed per listing.
+  fields:
+  - name: price
+    description: Fixed price, denominated in any supported payment ASA.
+  - name: visibility
+    description: public | private (private targets a specific buyer address).
+  - name: start_date
+  - name: end_date
+  relationships:
+  - type: has_one
+    target: Basket
+  - type: has_one
+    target: ListingContract
+- name: Offer
+  description: >-
+    A peer-to-peer offer made against NFTs or fungible tokens, allowing
+    negotiation between any two users. An offer contract is deployed per offer.
+  relationships:
+  - type: has_one
+    target: Basket
+  - type: has_one
+    target: OfferContract
+- name: Auction
+  description: >-
+    A time-based sale of a basket. Two modes are documented — normal auction
+    (highest bidder wins) and reverse/Dutch auction (price decreases over time).
+    An auction contract is deployed per auction.
+  fields:
+  - name: mode
+    description: normal | reverse (Dutch).
+  relationships:
+  - type: has_one
+    target: Basket
+  - type: has_many
+    target: Bid
+  - type: has_one
+    target: AuctionContract
+- name: Bid
+  description: A bid placed by a potential buyer in a normal auction.
+  relationships:
+  - type: belongs_to
+    target: Auction
+- name: MultiMint
+  description: >-
+    A basket containing a supply of a single asset type, where different buyers
+    can each purchase a portion of the available supply.
+  relationships:
+  - type: has_one
+    target: Basket
+- name: CreatorFee
+  description: >-
+    Royalty set globally on-chain by a creator address, up to 15%. All assets
+    created by that address are governed by the fee. Payable in ALGO and in any
+    other supported payment asset the creator has opted into.
+  fields:
+  - name: rate
+    description: Percentage, maximum 15%.
+  - name: creator_address
+  relationships:
+  - type: belongs_to
+    target: Asset
+    via: creator_address
+- name: PaymentAsset
+  description: >-
+    An ASA accepted by the protocol as a means of payment. Any ASA may be used as
+    a payment method, enabling NFT-to-NFT trades by design.
+  fields:
+  - name: asa_id
+  documented_values:
+  - asset: ALGO
+    asa_id: null
+    note: Native Algorand token.
+  - asset: USDC
+    asa_id: 31566704
+  - asset: USDT
+    asa_id: 312769
+- name: EXAToken
+  description: >-
+    The governance token of the EXA ecosystem. Grants voting power over protocol
+    settings, feature implementation, partnerships and treasury allocation, and
+    can be used to buy and sell NFTs on EXA Market.
+  fields:
+  - name: asa_id
+    value: 1888888888
+  - name: ticker
+    value: EXA
+  - name: total_supply
+    value: 1000000000
+  - name: decimals
+    value: 6
+- name: ListingContract
+  description: Smart contract deployed on each listing; published as a base64 TEAL
+    approval program plus a clear-state program.
+  source: https://docs.exa.community/getting-started/contracts.md
+- name: OfferContract
+  description: Smart contract deployed on each offer; published as a base64 TEAL approval
+    program plus a clear-state program.
+  source: https://docs.exa.community/getting-started/contracts.md
+- name: AuctionContract
+  description: Smart contract deployed on each auction; published as a base64 TEAL
+    approval program plus a clear-state program.
+  source: https://docs.exa.community/getting-started/contracts.md

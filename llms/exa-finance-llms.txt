@@ -1,0 +1,11 @@
+# Community
+
+## Community
+
+- [Introduction](https://docs.exa.community/getting-started/introduction.md): General overview.
+- [Governance](https://docs.exa.community/getting-started/governance.md): Overview of the Governance Architecture.
+- [Utility](https://docs.exa.community/getting-started/utility.md): Token Utility.
+- [Tokenomics](https://docs.exa.community/getting-started/tokenomics.md): Token Allocations & Distribution.
+- [Protocol](https://docs.exa.community/getting-started/protocol.md): Overview of the EXA Market protocol.
+- [Contracts](https://docs.exa.community/getting-started/contracts.md): List of all EXA Market related contracts.
+- [Audits](https://docs.exa.community/getting-started/audits.md): Security audits conducted.
