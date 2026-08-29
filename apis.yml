@@ -16,6 +16,17 @@ description: 'EXA Finance is a French Web3 company, founded in 2021, that builds
   public HTTP/REST API: its programmable surface is on-chain Algorand smart contracts
   (listing, offer and auction contracts, published as TEAL approval programs), reached
   through standard Algorand algod and indexer node APIs and the Algorand SDKs.'
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
