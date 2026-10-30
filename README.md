@@ -64,6 +64,82 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Exa Finance is a company surfaced as a portfolio company of speedinvest and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+EXA Finance is a French Web3 company, founded in 2021, that builds EXA Market — a peer-to-peer NFT and multi-asset marketplace on the Algorand blockchain. Because Algorand represents both fungible tokens and NFTs under the single ASA (Algorand Standard Asset) standard, the EXA Market protocol lets users bundle up to four assets into a "basket" and trade them in a single transaction, sell NFTs for any ASA rather than only the native ALGO token, make peer-to-peer offers, and run standard sales, normal and Dutch/reverse auctions, and multi-mints. Creators set an on-chain royalty fee of up to 15% globally against their creator address, payable in ALGO, USDC, USDT and other opted-in assets. The protocol is governed by the EXA token (ASA ID 1888888888) through the EXA Community DAO, whose EXRC/EXIP proposal lifecycle is modeled on Uniswap, dYdX, Tinyman and Blur. EXA raised a $2M seed round in January 2022 with Speedinvest, Lemniscap, Big Brain Holdings, Borderless Capital, Encode Club, Meld Ventures, 11-11 DG Partners and 0x Ventures. EXA Market publishes no public HTTP/REST API: its programmable surface is on-chain Algorand smart contracts (listing, offer and auction contracts, published as TEAL approval programs), reached through standard Algorand algod and indexer node APIs and the Algorand SDKs.
 
-Backed by: speedinvest
+**Areas:** Company · Blockchain · Web3 · NFT · Marketplace · Algorand · Smart Contracts · Decentralized Finance · Governance · Digital Assets
+
+## Exa Finance on APIs.io
+
+Everything profiled for Exa Finance is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/exa-finance/](https://apis.io/providers/exa-finance/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Exa Finance Domain Security](https://apis.io/security/exa-finance/exa-finance-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://exa.market/)
+- [Documentation](https://docs.exa.community/)
+- [Getting started](https://docs.exa.community/getting-started/introduction)
+- [GitHub](https://github.com/exa-finance)
+
+## API Evangelist rating
+
+**Kin Score 13.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/exa-finance/](https://apis.io/providers/exa-finance/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Exa Finance: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/exa-finance/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
